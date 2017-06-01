@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 640; -fx-pref-height: 720;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-pref-height: 50; -fx-background-color: dimgray;">
+         <children>
+            <Button fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Open">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="start" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Start">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="pause" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Pause">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Remove">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="settings" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Settings">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <ToggleButton fx:id="server" mnemonicParsing="false" style="-fx-pref-width: 100; -fx-pref-height: inherit;" styleClass="controll_button" text="Server">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </ToggleButton>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0.1; -fx-pref-height: 50;">
+         <children>
+            <Label style="-fx-pref-width: 50; -fx-pref-height: inherit;" text="Show:">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Courier New" size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="selector" prefWidth="150.0" style="-fx-pref-width: 200; -fx-pref-height: inherit;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <TextField fx:id="filter" style="-fx-pref-width: 390; -fx-pref-height: inherit;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <ScrollPane fx:id="task_window" prefHeight="620.0" prefWidth="640.0" />
+   </children>
+</VBox>
