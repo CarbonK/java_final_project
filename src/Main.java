@@ -1,6 +1,5 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -22,9 +21,9 @@ public class Main extends Application {
 			
 			fxml = loader.getController();
 			
-			ToggleSwitch toggleSwitch = new ToggleSwitch();
-			fxml.getControll_bar().getChildren().add(toggleSwitch);
-			fxml.getControll_bar().setMargin(toggleSwitch, new Insets(2, 2, 2, 2));
+//			for (int i = 0; i < 10; i++) {
+//				fxml.getTask_window().getChildren().add(new Task());
+//			}
 			
 			primaryStage.setScene(scene);
 			primaryStage.show();

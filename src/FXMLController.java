@@ -3,15 +3,19 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class FXMLController implements Initializable {
 	
+	@FXML
+	private VBox mainwindow;
 	@FXML
 	private HBox controll_bar;
 	@FXML
@@ -29,10 +33,11 @@ public class FXMLController implements Initializable {
 	@FXML
 	private TextField filter;
 	@FXML
-	private ScrollPane task_window;
+	private VBox task_window;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		assert mainwindow != null : "fx:id\"mainwindow\" not found !";
 		assert controll_bar != null : "fx:id\"controll_bar\" not found !";
 		assert open != null : "fx:id\"open\" not found !";
 		assert start != null : "fx:id\"start\" not found !";
@@ -42,6 +47,16 @@ public class FXMLController implements Initializable {
 		assert selector != null : "fx:id\"selector\" not found !";
 		assert filter != null : "fx:id\"filter\" not found !";
 		assert task_window != null : "fx:id\"task_window\" not found !";
+		
+		ToggleSwitch toggleSwitch = new ToggleSwitch();
+		controll_bar.getChildren().add(toggleSwitch);
+		controll_bar.setMargin(toggleSwitch, new Insets(2, 2, 2, 2));
+		
+		((ScrollPane)mainwindow.getChildren().get(2)).prefHeightProperty().bind(mainwindow.heightProperty().subtract(100));
+	}
+
+	public VBox getMainwindow() {
+		return mainwindow;
 	}
 	
 	public HBox getControll_bar() {
@@ -55,7 +70,6 @@ public class FXMLController implements Initializable {
 	public Button getStart() {
 		return start;
 	}
-	
 	
 	public Button getPause() {
 		return pause;
@@ -77,7 +91,7 @@ public class FXMLController implements Initializable {
 		return filter;
 	}
 	
-	public ScrollPane getTask_window() {
+	public VBox getTask_window() {
 		return task_window;
 	}
 
