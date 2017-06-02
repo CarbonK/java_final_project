@@ -6,65 +6,59 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 640; -fx-pref-height: 720;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 640; -fx-pref-height: 720;" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-pref-height: 50; -fx-background-color: dimgray;">
+      <HBox fx:id="controll_bar" prefHeight="100.0" prefWidth="200.0" style="-fx-pref-height: 50; -fx-background-color: dimgray;" stylesheets="@MainWindow.css">
          <children>
-            <Button fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Open">
+            <Button id="open" fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="start" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Start">
+            <Button id="start" fx:id="start" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="pause" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Pause">
+            <Button id="pause" fx:id="pause" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Remove">
+            <Button id="remove" fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="settings" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit;" styleClass="controll_button" text="Settings">
+            <Button id="settings" fx:id="settings" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <ToggleButton fx:id="server" mnemonicParsing="false" style="-fx-pref-width: 100; -fx-pref-height: inherit;" styleClass="controll_button" text="Server">
-               <HBox.margin>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </HBox.margin>
-            </ToggleButton>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0.1; -fx-pref-height: 50;">
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0.1; -fx-pref-height: 50;" stylesheets="@MainWindow.css">
          <children>
-            <Label style="-fx-pref-width: 50; -fx-pref-height: inherit;" text="Show:">
+            <Label style="-fx-pref-width: 50; -fx-pref-height: inherit;" stylesheets="@MainWindow.css" text="Show:">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
                <font>
-                  <Font name="Courier New" size="13.0" />
+                  <Font name="Courier New Bold" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="selector" prefWidth="150.0" style="-fx-pref-width: 200; -fx-pref-height: inherit;">
+            <ChoiceBox fx:id="selector" prefWidth="150.0" style="-fx-pref-width: 200; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ChoiceBox>
-            <TextField fx:id="filter" style="-fx-pref-width: 390; -fx-pref-height: inherit;">
+            <TextField fx:id="filter" style="-fx-pref-width: 390; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </TextField>
          </children>
       </HBox>
-      <ScrollPane fx:id="task_window" prefHeight="620.0" prefWidth="640.0" />
+      <ScrollPane fx:id="task_window" prefHeight="620.0" prefWidth="640.0" stylesheets="@MainWindow.css" />
    </children>
 </VBox>
