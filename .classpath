@@ -2,10 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/hty/Documents/java/java_final_project/lib/ttorrent-core-1.6-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="/home/hty/Documents/java/java_final_project/lib/slf4j-nop-1.7.25.jar"/>
-	<classpathentry kind="lib" path="/home/hty/Documents/java/java_final_project/lib/slf4j-api-1.7.25.jar"/>
-	<classpathentry kind="lib" path="/home/hty/Documents/java/java_final_project/lib/commons-io-2.5.jar"/>
-	<classpathentry kind="lib" path="/home/hty/Documents/java/java_final_project/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-nop-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/ttorrent-core-1.6-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
