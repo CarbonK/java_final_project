@@ -1,2 +1,28 @@
-.controll_button {
+.controll {
+	-fx-border-radius: 10px;
+	-fx-border-color: dimgray;
+}
+
+.controll:hover {
+	-fx-border-color: white;
+}
+
+#open {
+	-fx-background-image: url("./img/folder-symbol.png");
+}
+
+#start {
+	-fx-background-image: url("./img/play-arrow.png");
+}
+
+#pause {
+	-fx-background-image: url("./img/pause-button.png");
+}
+
+#remove {
+	-fx-background-image: url("./img/rubbish-bin-delete-button.png");
+}
+
+#settings {
+	-fx-background-image: url("./img/settings-cogwheel-button.png");
 }

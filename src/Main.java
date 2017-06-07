@@ -21,11 +21,15 @@ public class Main extends Application {
 			
 			fxml = loader.getController();
 			
+//			for (int i = 0; i < 10; i++) {
+//				fxml.getTask_window().getChildren().add(new Task());
+//			}
+			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 }
