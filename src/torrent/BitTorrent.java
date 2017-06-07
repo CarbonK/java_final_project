@@ -174,6 +174,23 @@ public class BitTorrent {
 		return fmt.format(num) + " " + res;
 	}
 	
+	public void delete(boolean deleteTorrent) {
+		client.stop();
+		
+		File tor = new File(torrent);
+		File dst = new File(dest);
+		
+		File down = new File(dst.getAbsolutePath() + "/" + client.getTorrent().getName());
+		File temp = new File(dst.getAbsolutePath() + "/" + client.getTorrent().getName() + ".part");
+		
+		System.out.println(down.delete());
+		System.out.println(temp.delete());
+		
+		if(deleteTorrent) {
+			System.out.println(tor.delete());
+		}
+	}
+	
 	private Client client;
 	
 	private String torrent;

@@ -9,8 +9,8 @@ public class moc_Main {
 	public static void main(String[] args) {
 		BitTorrent BT = new BitTorrent();
 
-		BT.setDestination("/home/hty/Downloads");
-		BT.setTorrent("/home/hty/Downloads/ubuntu-17.04-desktop-amd64.iso.torrent");
+		BT.setDestination("/home/hmkrl/ubuntu_img");
+		BT.setTorrent("/home/hmkrl/ubuntu_img/ubuntu-17.04-desktop-amd64.iso.torrent");
 		
 		BT.start();
 		
@@ -25,7 +25,7 @@ public class moc_Main {
 //			if(in.equals("d")) System.out.println(BT.getDownloadedSize());
 //			if(in.equals("r")) System.out.println(BT.getPeerNumber());
 //			if(in.equals("a")) System.out.println(BT.getActivePeerNumber());
-			System.out.println(BT.byteConvert(BT.getDownloadedSize()));
+			BT.delete(true);
 		}
 	}
 
