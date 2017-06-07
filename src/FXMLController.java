@@ -1,9 +1,11 @@
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ScrollPane;
@@ -11,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class FXMLController implements Initializable {
 	
@@ -34,6 +38,8 @@ public class FXMLController implements Initializable {
 	private TextField filter;
 	@FXML
 	private VBox task_window;
+	
+	private ToggleSwitch toggleSwitch;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -48,14 +54,58 @@ public class FXMLController implements Initializable {
 		assert filter != null : "fx:id\"filter\" not found !";
 		assert task_window != null : "fx:id\"task_window\" not found !";
 		
-		/******toggle switch*****/
-		ToggleSwitch toggleSwitch = new ToggleSwitch();
-		controll_bar.getChildren().add(toggleSwitch);
-		controll_bar.setMargin(toggleSwitch, new Insets(2));
-		
+		setMainwindow();
+		setOpen();
+		setStart();
+		setToggleSwitch();
+	}
+	
+	private void setMainwindow() {
 		((ScrollPane)mainwindow.getChildren().get(2)).prefHeightProperty().bind(mainwindow.heightProperty().subtract(100));
 	}
+	
+	private void setOpen() {
+		open.setOnAction((event) -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setTitle("Open a Torrent");
+			Stage stage = new Stage();
+			File file = fileChooser.showOpenDialog(stage);
+			
+			if (file != null) {
+				stage.setScene(new Scene(new TorrentOptions(file)));
+				stage.show();
+			}
+		});
+	}
 
+	private void setStart() {
+		start.setOnAction((event) -> {
+			task_window.getChildren().forEach((elem) -> {
+				Task current = (Task)elem;
+				if (current.getSelected().get()) {
+					current.getBt().resume();
+				}
+			});
+		});
+	}
+	
+	private void setPause() {
+		pause.setOnAction((event) -> {
+			task_window.getChildren().forEach((elem) -> {
+				Task current = (Task)elem;
+				if (current.getSelected().get()) {
+					current.getBt().pause();
+				}
+			});
+		});
+	}
+	
+	private void setToggleSwitch() {
+		toggleSwitch = new ToggleSwitch();
+		controll_bar.getChildren().add(toggleSwitch);
+		controll_bar.setMargin(toggleSwitch, new Insets(2));
+	}
+	
 	public VBox getMainwindow() {
 		return mainwindow;
 	}

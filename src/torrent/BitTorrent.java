@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.security.NoSuchAlgorithmException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 import com.turn.ttorrent.client.*;
@@ -11,7 +12,7 @@ import com.turn.ttorrent.client.peer.SharingPeer;
 
 public class BitTorrent {
 	
-	BitTorrent() {
+	public BitTorrent() {
 		sharing = false;
 		tmr = new Timer();
 		dlbyte = new long[10];
@@ -124,7 +125,7 @@ public class BitTorrent {
 	}
 	
 	public long getDownloadedSize() {
-		return client.getTorrent().getDownloaded();
+		return (long)(getFileSize() * (getProgress() / 100));
 	}
 	
 	public long getDownloadRate() {
@@ -147,6 +148,30 @@ public class BitTorrent {
 		}
 		
 		return active;
+	}
+	
+	public static String byteConvert(long byte_size) {
+		String res = "B";
+		if(byte_size == 0) {
+			return "0.0 B";
+		}
+		float num = byte_size;
+		if(num > 1024) {
+			num /= 1024;
+			res = "KB";
+		}
+		if(num > 1024) {
+			num /= 1024;
+			res = "MB";
+		}
+		if(num > 1024) {
+			num /= 1024;
+			res = "GB";
+		}
+		
+		DecimalFormat fmt = new DecimalFormat(".#");
+		
+		return fmt.format(num) + " " + res;
 	}
 	
 	private Client client;

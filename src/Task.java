@@ -1,7 +1,7 @@
-import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.animation.AnimationTimer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import torrent.BitTorrent;
 
 public class Task extends HBox {
 	
@@ -20,9 +21,9 @@ public class Task extends HBox {
 	private final ProgressBar progressBar = new ProgressBar();
 	private final Label speed = new Label();
 	private final SimpleBooleanProperty selected = new SimpleBooleanProperty(false);
-	private final Timer timer = new Timer();
+	private final BitTorrent bt = new BitTorrent();
 	
-	public Task(File file) {
+	public Task(String path, String dst) {
 		getChildren().addAll(icon, vBox);
 		vBox.getChildren().addAll(name, progress, progressBar, speed);
 		
@@ -46,14 +47,12 @@ public class Task extends HBox {
 		name.setFont(new Font("Courier New", 14).font("Courier", FontWeight.BOLD, 14));
 		
 		progress.setPrefHeight(25);
-		progress.setText("None of " + "%) - Remaining time unknown");
 		
 		progressBar.prefWidthProperty().bind(vBox.widthProperty());
 		progressBar.setPrefHeight(25);
 		progressBar.setProgress(0);
 		
 		speed.setPrefHeight(25);
-		speed.setText("Downloading from 0 of 0 peers");
 		
 		selected.addListener((observable, oldValue, newValue) -> {
 			if (!oldValue && newValue) {
@@ -62,18 +61,46 @@ public class Task extends HBox {
 				setStyle("-fx-background-color: transparent;");
 			}
 		});
+				
+		bt.setTorrent(path);
+		bt.setDestination(dst);
+		bt.start();
+
+		name.setText(bt.getFileName());
 		
-		timer.schedule(new TimerTask() {
+		AnimationTimer timer = new AnimationTimer() {
 			
 			@Override
-			public void run() {
+			public void handle(long now) {
+				progress.setText(
+					BitTorrent.byteConvert(bt.getDownloadedSize()) + " of " +
+					BitTorrent.byteConvert(bt.getFileSize()) + "(" + 
+					(float)Math.round(bt.getProgress() * 10) / 10 + "%)"
+				);
+				progressBar.setProgress(bt.getProgress() / 100);
+				speed.setText(
+					"Downloading from " + bt.getActivePeerNumber() +
+					" of " + bt.getPeerNumber() + " peers - " + 
+					"download " + BitTorrent.byteConvert(bt.getDownloadRate()) + "/s " +
+					"upload " + BitTorrent.byteConvert(bt.getUploadRate()) + "/s"
+				);
+				
+				if (bt.getProgress() >= 100) {
+					this.stop();
+				}
 			}
 			
-		}, 0, 1000);
+		};
+		
+		timer.start();
 	}
 		
 	public SimpleBooleanProperty getSelected() {
 		return selected;
+	}
+	
+	public BitTorrent getBt() {
+		return bt;
 	}
 
 }

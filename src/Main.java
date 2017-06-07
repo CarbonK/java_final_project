@@ -1,10 +1,7 @@
-import java.io.File;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -24,14 +21,10 @@ public class Main extends Application {
 			
 			fxml = loader.getController();
 			
-			fxml.getOpen().setOnAction((event) -> {
-				FileChooser fileChooser = new FileChooser();
-				fileChooser.setTitle("Open file");
-				File file = fileChooser.showOpenDialog(primaryStage);
-				fxml.getTask_window().getChildren().add(new Task(file));
-			});
-			
 			primaryStage.setScene(scene);
+			primaryStage.setOnCloseRequest((event) -> {
+				System.exit(0);
+			});
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
