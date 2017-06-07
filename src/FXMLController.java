@@ -48,9 +48,10 @@ public class FXMLController implements Initializable {
 		assert filter != null : "fx:id\"filter\" not found !";
 		assert task_window != null : "fx:id\"task_window\" not found !";
 		
+		/******toggle switch*****/
 		ToggleSwitch toggleSwitch = new ToggleSwitch();
 		controll_bar.getChildren().add(toggleSwitch);
-		controll_bar.setMargin(toggleSwitch, new Insets(2, 2, 2, 2));
+		controll_bar.setMargin(toggleSwitch, new Insets(2));
 		
 		((ScrollPane)mainwindow.getChildren().get(2)).prefHeightProperty().bind(mainwindow.heightProperty().subtract(100));
 	}

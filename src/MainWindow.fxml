@@ -61,7 +61,7 @@
       </HBox>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="620.0" stylesheets="@MainWindow.css">
          <content>
-            <VBox fx:id="task_window" prefHeight="620.0" prefWidth="640.0" style="-fx-pref-width: inherit; -fx-pref-height: inherit;" />
+            <VBox fx:id="task_window" />
          </content></ScrollPane>
    </children>
 </VBox>
