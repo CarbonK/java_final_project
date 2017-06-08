@@ -1,5 +1,6 @@
 import java.io.File;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -57,6 +58,8 @@ public class FXMLController implements Initializable {
 		setMainwindow();
 		setOpen();
 		setStart();
+		setPause();
+		setRemove();
 		setToggleSwitch();
 	}
 	
@@ -83,7 +86,7 @@ public class FXMLController implements Initializable {
 			task_window.getChildren().forEach((elem) -> {
 				Task current = (Task)elem;
 				if (current.getSelected().get()) {
-					current.getBt().resume();
+					current.getBt().start();
 				}
 			});
 		});
@@ -97,6 +100,14 @@ public class FXMLController implements Initializable {
 					current.getBt().pause();
 				}
 			});
+		});
+	}
+	
+	private void setRemove() {
+		remove.setOnAction((event) -> {
+			Stage stage = new Stage();
+			stage.setScene(new Scene(new RemoveCheck()));
+			stage.show();
 		});
 	}
 	

@@ -1,6 +1,3 @@
-import java.util.Timer;
-import java.util.TimerTask;
-
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Insets;

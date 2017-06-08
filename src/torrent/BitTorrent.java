@@ -99,11 +99,7 @@ public class BitTorrent {
 		client.stop();
 	}
 	
-	public void resume() {
-		if(sharing) client.share();
-		else client.download();
-	}
-	
+		
 	public float getProgress() {
 		return client.getTorrent().getCompletion();
 	}
