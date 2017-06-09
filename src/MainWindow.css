@@ -1,9 +1,9 @@
-.controll {
+.btn {
 	-fx-border-radius: 10px;
 	-fx-border-color: dimgray;
 }
 
-.controll:hover {
+.btn:hover {
 	-fx-border-color: white;
 }
 

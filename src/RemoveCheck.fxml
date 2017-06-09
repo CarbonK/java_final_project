@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 300; -fx-pref-height: 150; -fx-background-color: dimgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RemoveCheckController">
+   <children>
+      <Label alignment="CENTER_RIGHT" style="-fx-pref-width: inherit; -fx-pref-height: 50;" text="Remove selected task ?" textFill="WHITE">
+         <font>
+            <Font name="Courier New" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <CheckBox fx:id="rm_torrent" mnemonicParsing="false" style="-fx-pref-height: 50;" text="Remove .torrent" textFill="WHITE">
+         <font>
+            <Font name="Courier New" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </CheckBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" style="-fx-pref-width: inherit; -fx-pref-height: 50;">
+         <children>
+            <Button fx:id="cancel" cancelButton="true" mnemonicParsing="false" style="-fx-pref-width: 80; -fx-pref-height: 30;" text="Cancel">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Courier New Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 80; -fx-pref-height: 30;" text="Remove">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Courier New Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

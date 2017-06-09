@@ -2,8 +2,6 @@ package torrent;
 
 import java.util.Scanner;
 
-import com.turn.ttorrent.client.Client;
-
 public class moc_Main {
 
 	public static void main(String[] args) {

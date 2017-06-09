@@ -1,0 +1,8 @@
+.btn {
+	-fx-border-radius: 10px;
+	-fx-border-color: dimgray;
+}
+
+.btn:hover {
+	-fx-border-color: white;
+}

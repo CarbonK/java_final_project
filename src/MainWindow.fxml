@@ -6,31 +6,31 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="mainwindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 640; -fx-pref-height: 720;" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+<VBox fx:id="mainwindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 640; -fx-pref-height: 720;" stylesheets="@MainWindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindowController">
    <children>
       <HBox fx:id="controll_bar" prefHeight="100.0" prefWidth="200.0" style="-fx-pref-height: 50; -fx-background-color: dimgray;" stylesheets="@MainWindow.css">
          <children>
-            <Button id="open" fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
+            <Button id="open" fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="start" fx:id="start" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
+            <Button id="start" fx:id="start" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="pause" fx:id="pause" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
+            <Button id="pause" fx:id="pause" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="remove" fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
+            <Button id="remove" fx:id="remove" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="settings" fx:id="settings" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="controll" stylesheets="@MainWindow.css">
+            <Button id="settings" fx:id="settings" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
@@ -47,12 +47,12 @@
                   <Font name="Courier New Bold" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="selector" prefWidth="150.0" style="-fx-pref-width: 200; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
+            <ChoiceBox prefWidth="150.0" style="-fx-pref-width: 200; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </ChoiceBox>
-            <TextField fx:id="filter" style="-fx-pref-width: 390; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
+            <TextField style="-fx-pref-width: 390; -fx-pref-height: inherit;" stylesheets="@MainWindow.css">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>

@@ -20,7 +20,7 @@ public class Task extends HBox {
 	private final SimpleBooleanProperty selected = new SimpleBooleanProperty(false);
 	private final BitTorrent bt = new BitTorrent();
 	
-	public Task(String path, String dst) {
+	public Task(String path, String dst, boolean share) {
 		getChildren().addAll(icon, vBox);
 		vBox.getChildren().addAll(name, progress, progressBar, speed);
 		
@@ -33,7 +33,7 @@ public class Task extends HBox {
 			selected.set(true);
 		});
 		
-		vBox.setMargin(progressBar, new Insets(0, 10, 0, 10));
+		VBox.setMargin(progressBar, new Insets(0, 10, 0, 10));
 		vBox.prefWidthProperty().bind(this.widthProperty().subtract(50));
 		
 		icon.setPrefWidth(50);
@@ -41,7 +41,7 @@ public class Task extends HBox {
 		icon.setStyle("-fx-background-image: url(\"./img/folder-symbol.png\"); -fx-background-repeat: no-repeat; -fx-background-position: center;");
 
 		name.setPrefHeight(25);
-		name.setFont(new Font("Courier New", 14).font("Courier", FontWeight.BOLD, 14));
+		name.setFont(Font.font("Courier New", FontWeight.BOLD, 14));
 		
 		progress.setPrefHeight(25);
 		
@@ -61,6 +61,7 @@ public class Task extends HBox {
 				
 		bt.setTorrent(path);
 		bt.setDestination(dst);
+		bt.setSharing(share);
 		bt.start();
 
 		name.setText(bt.getFileName());

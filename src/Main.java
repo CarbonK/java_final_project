@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	public static FXMLController fxml = null;
+	public static MainWindowController fxml = null;
 
 	public static void main(String[] args) {
 		Application.launch(Main.class, (String[])null);

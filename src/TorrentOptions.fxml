@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-pref-width: 600; -fx-pref-height: 200; -fx-background-color: dimgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TorrentOptionsController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-pref-width: inherit; -fx-pref-height: 50;">
+         <children>
+            <Label style="-fx-pref-width: 150; -fx-pref-height: inherit;" text="Torrent:" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="torrent" mnemonicParsing="false" style="-fx-pref-width: 450; -fx-pref-height: inherit; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@TorrentOptions.css" textFill="WHITE">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-pref-width: inherit; -fx-pref-height: 50;">
+         <children>
+            <Label style="-fx-pref-width: 150; -fx-pref-height: inherit;" text="Destination:" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="dst" mnemonicParsing="false" style="-fx-pref-width: 450; -fx-pref-height: inherit; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@TorrentOptions.css" textFill="WHITE">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <CheckBox fx:id="share" mnemonicParsing="false" style="-fx-pref-height: inherit;" text="Share after finished" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </CheckBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" style="-fx-pref-width: inherit; -fx-pref-height: 50;">
+         <children>
+            <Button fx:id="cancel" cancelButton="true" mnemonicParsing="false" style="-fx-pref-width: 80; -fx-pref-height: 30;" text="Cancel">
+               <font>
+                  <Font name="Courier New Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="open" mnemonicParsing="false" style="-fx-pref-width: 80; -fx-pref-height: 30;" text="Open">
+               <font>
+                  <Font name="Courier New Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
