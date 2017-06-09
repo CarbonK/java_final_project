@@ -187,6 +187,14 @@ public class BitTorrent {
 		}
 	}
 	
+	public void setUpLimit(double rate) {
+		client.setMaxUploadRate(rate);
+	}
+	
+	public void setDownLimit(double rate) {
+		client.setMaxDownloadRate(rate);
+	}
+	
 	private Client client;
 	
 	private String torrent;
