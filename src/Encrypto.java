@@ -1,4 +1,4 @@
-package encrypto;
+
 import java.security.*;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -131,11 +131,7 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		//gridx, gridy 這個屬性是用來描述組件在佈局時應處於那個網格位置,即描述網格開始的位置
 		//gridwidth,gridheigh這兩個屬性用來描述組件在佈局中的所佔的網格的個數
 	}
-	public static void main (String[] args)
-	{
-		Encrypto en=new Encrypto();
-		en.setVisible(true);
-	}
+
 	public void encryptofile(String key,File path) 
 	{
 		 MessageDigest md=null;	
