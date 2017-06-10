@@ -13,6 +13,8 @@ import com.turn.ttorrent.client.peer.SharingPeer;
 public class BitTorrent {
 	
 	public BitTorrent() {
+		maxDlRate = -1;
+		maxUlRate = -1;
 		sharing = false;
 		tmr = new Timer();
 		dlbyte = new long[10];
@@ -64,6 +66,8 @@ public class BitTorrent {
 				InetAddress.getLocalHost(),
 				SharedTorrent.fromFile(tor, dst)
 			);
+			client.setMaxDownloadRate(maxDlRate);
+			client.setMaxUploadRate(maxUlRate);
 			if(sharing) client.share();
 			else client.download();
 			tmr.schedule(new TimerTask() {
@@ -188,11 +192,11 @@ public class BitTorrent {
 	}
 	
 	public void setUpLimit(double rate) {
-		client.setMaxUploadRate(rate);
+		maxUlRate = rate;
 	}
 	
 	public void setDownLimit(double rate) {
-		client.setMaxDownloadRate(rate);
+		maxDlRate = rate;
 	}
 	
 	private Client client;
@@ -212,4 +216,8 @@ public class BitTorrent {
 	private long ulrate;
 	
 	private boolean sharing;
+	
+	private double maxDlRate;
+	
+	private double maxUlRate;
 }

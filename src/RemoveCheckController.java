@@ -19,6 +19,7 @@ public class RemoveCheckController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		assert rm_torrent != null : "fx:id\"rm_torrent\" not found !";
+		assert cancel != null : "fx:id\"cancel\" not found !";
 		assert remove != null : "fx:id\"remove\" not found !";
 		
 		cancel.setOnAction((event) -> {

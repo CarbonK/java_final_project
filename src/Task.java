@@ -62,8 +62,10 @@ public class Task extends HBox {
 		bt.setTorrent(path);
 		bt.setDestination(dst);
 		bt.setSharing(share);
+		bt.setDownLimit(SettingController.getDll() ? SettingController.getDls() : Double.MAX_VALUE);
+		bt.setUpLimit(SettingController.getUll() ? SettingController.getUls() : Double.MAX_VALUE);
 		bt.start();
-
+		
 		name.setText(bt.getFileName());
 		
 		AnimationTimer timer = new AnimationTimer() {

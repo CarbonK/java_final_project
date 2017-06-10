@@ -82,6 +82,12 @@ public class MainWindowController implements Initializable {
 			stage.setScene(new Scene(new RemoveCheck().getRoot()));
 			stage.show();
 		});
+		
+		settings.setOnAction((event) -> {
+			Stage stage = new Stage();
+			stage.setScene(new Scene(new Settings().getRoot()));
+			stage.show();
+		});
 
 		toggleSwitch = new ToggleSwitch();
 		controll_bar.getChildren().add(toggleSwitch);

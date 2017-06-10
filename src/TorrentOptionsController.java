@@ -37,8 +37,12 @@ public class TorrentOptionsController implements Initializable {
 		torrent.setOnAction((event) -> {
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setTitle("Open a Torrent");
-			path = fileChooser.showOpenDialog(new Stage()).getAbsolutePath();
-			torrent.setText(path);
+			File file = fileChooser.showOpenDialog(new Stage());
+			
+			if (file != null) {
+				path = file.getAbsolutePath();
+				torrent.setText(path);
+			}
 		});
 		
 		dst.setOnAction((event) -> {
