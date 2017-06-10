@@ -60,8 +60,8 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		this.addWindowStateListener(this);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setGridBagConstraints(0,0,1,1,0,0,GridBagConstraints.NONE,GridBagConstraints.EAST);
-		Inputpassword1.setText("Input the key¡G");
-		Inputpassword2.setText("Input the Key¡G");
+		Inputpassword1.setText("Input the key");
+		Inputpassword2.setText("Input the Key");
 		gbcs.insets=new Insets(20,10,10,10);
 		p.add(Inputpassword1,gbcs);
 		setGridBagConstraints(1,0,5,1,1,0,GridBagConstraints.HORIZONTAL,GridBagConstraints.WEST);
@@ -129,8 +129,8 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		 gbcs.weightx=weightx;
 		 gbcs.weighty=weighty;
 		 gbcs.anchor=anchor;
-		//gridx, gridy ³o­ÓÄÝ©Ê¬O¥Î¨Ó´y­z²Õ¥ó¦b§G§½®ÉÀ³³B©ó¨º­Óºô®æ¦ì¸m,§Y´y­zºô®æ¶}©lªº¦ì¸m
-		//gridwidth,gridheigh³o¨â­ÓÄÝ©Ê¥Î¨Ó´y­z²Õ¥ó¦b§G§½¤¤ªº©Ò¦ûªººô®æªº­Ó¼Æ
+		//gridx, gridy ï¿½oï¿½ï¿½ï¿½Ý©Ê¬Oï¿½Î¨Ó´yï¿½zï¿½Õ¥ï¿½bï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ó¨º­Óºï¿½ï¿½ï¿½ï¿½m,ï¿½Yï¿½yï¿½zï¿½ï¿½ï¿½ï¿½}ï¿½lï¿½ï¿½ï¿½ï¿½m
+		//gridwidth,gridheighï¿½oï¿½ï¿½ï¿½ï¿½Ý©Ê¥Î¨Ó´yï¿½zï¿½Õ¥ï¿½bï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æªºï¿½Ó¼ï¿½
 	}
 
 	public void encryptofile(String key,File path) 
@@ -138,7 +138,7 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		MessageDigest md=null;	
 		try
 		{
-			FIN=new FileInputStream(path);//ÅªÀÉ
+			FIN=new FileInputStream(path);//Åªï¿½ï¿½
 			byte[] byteofkey=key.getBytes("UTF-8");
 			md=MessageDigest.getInstance("MD5");
 			byte[] realkey=md.digest(byteofkey);

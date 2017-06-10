@@ -30,6 +30,8 @@ public class MainWindowController implements Initializable {
 	@FXML
 	private Button settings;
 	@FXML
+	private Button encrypt;
+	@FXML
 	private VBox task_window;
 	
 	private ToggleSwitch toggleSwitch;
@@ -43,6 +45,7 @@ public class MainWindowController implements Initializable {
 		assert pause != null : "fx:id\"pause\" not found !";
 		assert remove != null : "fx:id\"remove\" not found !";
 		assert settings != null : "fx:id\"settings\" not found !";
+		assert encrypt != null : "fx:id\"encrypt\" not found !";
 		assert task_window != null : "fx:id\"task_window\" not found !";
 
 		((ScrollPane)mainwindow.getChildren().get(2)).prefHeightProperty().bind(mainwindow.heightProperty().subtract(100));
@@ -87,6 +90,11 @@ public class MainWindowController implements Initializable {
 			Stage stage = new Stage();
 			stage.setScene(new Scene(new Settings().getRoot()));
 			stage.show();
+		});
+		
+		encrypt.setOnAction((event) -> {
+			Encrypto e = new Encrypto();
+			e.setVisible(true);
 		});
 
 		toggleSwitch = new ToggleSwitch();

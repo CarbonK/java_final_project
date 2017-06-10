@@ -13,7 +13,7 @@ public class moc_Main {
 		BT.start();
 		
 		Scanner stdin = new Scanner(System.in);
-		
+
 		while(true) {
 			String in = stdin.nextLine();
 //			if(in.equals("p")) System.out.println(BT.getProgress());

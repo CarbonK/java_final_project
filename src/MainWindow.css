@@ -26,3 +26,7 @@
 #settings {
 	-fx-background-image: url("./img/settings-cogwheel-button.png");
 }
+
+#encrypt {
+	-fx-background-image: url("./img/locked-padlock.png");
+}

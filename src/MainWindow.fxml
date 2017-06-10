@@ -35,6 +35,11 @@
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </HBox.margin>
             </Button>
+            <Button id="encrypt" fx:id="encrypt" mnemonicParsing="false" style="-fx-pref-width: 50; -fx-pref-height: inherit; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: dimgray;" styleClass="btn" stylesheets="@MainWindow.css">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0.1; -fx-pref-height: 50;" stylesheets="@MainWindow.css">
