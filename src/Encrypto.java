@@ -47,7 +47,8 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 	InputStream FIN;
 	File selectedFile;
 	File selectedFile1;
-	 private SecretKeySpec skey;
+	private Dimension d;
+	private SecretKeySpec skey;
 	public Encrypto()
 	{
 		Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -99,13 +100,13 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		userinfo1.setForeground(Color.RED);
 		userinfo2.setForeground(Color.RED);
 	}
-	private Dimension d;
 	public void setWindowSize(Dimension size)
 	{
 		d=size;
 	}
 	@Override
-	public void windowStateChanged(WindowEvent e) {
+	public void windowStateChanged(WindowEvent e) 
+	{
 		if(e.getNewState()==Frame.NORMAL)
 		{
 			setWindowSize(this.getSize());
@@ -134,7 +135,7 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 
 	public void encryptofile(String key,File path) 
 	{
-		 MessageDigest md=null;	
+		MessageDigest md=null;	
 		try
 		{
 			FIN=new FileInputStream(path);//讀檔
@@ -160,7 +161,8 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 			FIN.close();
 			path.delete();
 			
-		} catch (FileNotFoundException e) 
+		}
+		catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();
 		}
@@ -172,19 +174,22 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 		{
 			System.out.println("\nError"+a.getMessage());
    	  	}
-       catch(NoSuchPaddingException f)
-   	  {
+        catch(NoSuchPaddingException f)
+   	    {
     	   System.out.println("\nError"+f.getMessage());
-   	  } catch (IOException e) {
-		// TODO 自動產生的 catch 區塊
-		e.printStackTrace();
-	} catch (InvalidKeyException e) {
-		// TODO 自動產生的 catch 區塊
-		e.printStackTrace();
-	} catch (InvalidAlgorithmParameterException e) {
-		// TODO 自動產生的 catch 區塊
-		e.printStackTrace();
-	}
+   	    }
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (InvalidKeyException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (InvalidAlgorithmParameterException e)
+		{
+			e.printStackTrace();
+		}
 	}
 		
 	
@@ -217,7 +222,8 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 				File f=new File(path.getAbsolutePath()+".encrypt");
 				f.delete();
 				
-			} catch (FileNotFoundException e) 
+			} 
+			catch (FileNotFoundException e) 
 			{
 				e.printStackTrace();
 			}
@@ -229,20 +235,22 @@ public class Encrypto extends JFrame implements WindowStateListener, ActionListe
 			{
 				System.out.println("\nError"+a.getMessage());
 	   	  	}
-	
-	       catch(NoSuchPaddingException f)
-	   	  {
+	        catch(NoSuchPaddingException f)
+	   	    {
 	    	   System.out.println("\nError"+f.getMessage());
-	   	  } catch (IOException e) {
-			// TODO 自動產生的 catch 區塊
-			e.printStackTrace();
-		} catch (InvalidKeyException e) {
-			// TODO 自動產生的 catch 區塊
-			e.printStackTrace();
-		} catch (InvalidAlgorithmParameterException e) {
-			// TODO 自動產生的 catch 區塊
-			e.printStackTrace();
-		}
+	   	    } 
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			} 
+			catch (InvalidKeyException e)
+			{
+				e.printStackTrace();
+			} 
+			catch (InvalidAlgorithmParameterException e)
+			{
+				e.printStackTrace();
+			}
 	}
 	public void actionPerformed(ActionEvent e)
 	{
